@@ -1,17 +1,16 @@
 package httpresource_test
 
 import (
-	"testing"
-	"net/http"
 	"fmt"
+	"net/http"
+	"testing"
 
 	"github.com/zimbatm/go-httpresource"
 )
 
-
 func TestHTTPResource(t *testing.T) {
 
-	res := httpresource.GET(func (w http.ResponseWriter, r *http.Request) {
+	res := httpresource.GET(func(w http.ResponseWriter, r *http.Request) {
 		return
 	})
 

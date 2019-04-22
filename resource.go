@@ -40,7 +40,6 @@ func (res Resource) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 		if res.GET != nil {
-			// FIXME: remove body
 			res.GET.ServeHTTP(w, r)
 			return
 		}
@@ -64,9 +63,6 @@ func (res Resource) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	http.Error(w, "method "+r.Method+" not implemented", http.StatusNotImplemented)
 }
 
-// GET returns a new resource with the GET handler installed
-func GET(h http.HandlerFunc) *Resource {
-	return &Resource{
-		GET: h,
-	}
-}
+// GET is a utility function that returns a new resource with the GET handler
+// installed
+func GET(h http.HandlerFunc) *Resource { return &Resource{GET: h} }
