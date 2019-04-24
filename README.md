@@ -40,6 +40,11 @@ func main() {
 }
 ```
 
+## Related projects
+
+* [Gorilla Mux](https://github.com/gorilla/mux) - A more featureful all-in-one
+  HTTP router
+
 ## License
 
 MIT (c) 2019 - zimbatm and contributors
